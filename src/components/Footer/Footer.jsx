@@ -14,10 +14,10 @@ const Footer = () => {
             Every drop counts.
           </p>
           <div className="social-links">
-            <a href="#" aria-label="Facebook">📘</a>
-            <a href="#" aria-label="Twitter">🐦</a>
-            <a href="#" aria-label="Instagram">📷</a>
-            <a href="#" aria-label="LinkedIn">💼</a>
+            <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">📘</a>
+            <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">🐦</a>
+            <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
+            <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">💼</a>
           </div>
         </div>
 
@@ -57,8 +57,8 @@ const Footer = () => {
         <div className="container">
           <p>
             &copy; {currentYear} BloodCare. All rights reserved. | 
-            <a href="#"> Privacy Policy</a> | 
-            <a href="#"> Terms of Service</a>
+            <a href="/privacy"> Privacy Policy</a> | 
+            <a href="/terms"> Terms of Service</a>
           </p>
           <p className="devops-note">
             Built with ❤️ using React.js & DevOps principles

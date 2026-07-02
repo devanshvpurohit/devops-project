@@ -203,7 +203,7 @@ export const simulateDelay = (ms = 500) => {
 };
 
 // Export all functions as a single API object
-export default {
+const api = {
   getBloodInventory,
   checkBloodAvailability,
   registerDonor,
@@ -216,3 +216,5 @@ export default {
   getBloodCompatibility,
   simulateDelay
 };
+
+export default api;
