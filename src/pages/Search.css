@@ -1,0 +1,399 @@
+.search-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.search-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.search-header p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.search-container {
+  margin-bottom: 40px;
+}
+
+.search-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding-right: 50px;
+  font-size: 1.1rem;
+}
+
+.search-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--text-light);
+}
+
+.quick-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.filter-label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-right: 10px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 2px solid var(--accent-color);
+  background-color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.clear-btn {
+  background-color: var(--error);
+  color: white;
+  border-color: var(--error);
+}
+
+.clear-btn:hover {
+  background-color: #e63946;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.inventory-card {
+  text-align: center;
+  padding: 32px 24px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.inventory-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.inventory-card:hover::before {
+  left: 100%;
+}
+
+.inventory-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.inventory-card.available {
+  border-left: 4px solid var(--success);
+}
+
+.inventory-card.low {
+  border-left: 4px solid var(--warning);
+}
+
+.inventory-card.unavailable {
+  border-left: 4px solid var(--error);
+  opacity: 0.7;
+}
+
+.blood-type-large {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+.units-available {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.units-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.units-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.progress-fill.available {
+  background-color: var(--success);
+}
+
+.progress-fill.low {
+  background-color: var(--warning);
+}
+
+.progress-fill.unavailable {
+  background-color: var(--error);
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.no-results-icon {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.no-results h3 {
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.no-results p {
+  color: var(--text-light);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: var(--transition);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-dark);
+}
+
+.modal-body {
+  margin: 24px 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.info-value {
+  color: var(--text-light);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: stretch;
+}
+
+.modal-actions .btn {
+  flex: 1;
+}
+
+/* Info Section */
+.info-section {
+  margin-bottom: 30px;
+}
+
+.info-section h3 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f1faee 0%, #a8dadc 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-item .stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.stat-item .stat-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-header h1 {
+    font-size: 2rem;
+  }
+
+  .inventory-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .blood-type-large {
+    font-size: 2.5rem;
+  }
+
+  .units-number {
+    font-size: 2rem;
+  }
+
+  .quick-filters {
+    justify-content: center;
+  }
+
+  .filter-label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .inventory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inventory-card {
+    padding: 20px 16px;
+  }
+
+  .blood-type-large {
+    font-size: 2rem;
+  }
+
+  .units-number {
+    font-size: 1.75rem;
+  }
+
+  .filter-btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
